@@ -1,0 +1,18 @@
+下单完成时间：2021-04-16 20:30:25.455606
+下单接口返回：{"overSea":false,"orderXml":null,"cartXml":null,"noStockSkuIds":"","reqInfo":null,"hasJxj":false,"addedServiceList":null,"sign":null,"pin":"jd_6b7137a5797f5","needCheckCode":false,"success":true,"resultCode":0,"overseaMerge":false,"addressVO":null,"orderId":158529499249,"submitSkuNum":1,"deductMoneyFlag":0,"international":false,"orderType":0,"goJumpOrderCenter":false,"payInfo":null,"cartEmpty":false,"scaleSkuInfoListVO":null,"purchaseSkuInfoListVO":null,"noSupportHomeServiceSkuList":null,"msgMobile":null,"msgUuid":null,"message":null}
+确认订单时间：2021-04-16 20:30:25.144225
+全选时间：2021-04-16 20:30:24.682184
+倒计时：0秒------2021-04-16 20:30:23
+
+
+下单完成时间：2021-04-16 20:33:16.822554
+下单接口返回：{"overSea":false,"orderXml":null,"cartXml":null,"noStockSkuIds":"","reqInfo":null,"hasJxj":false,"addedServiceList":null,"sign":null,"needCheckCode":false,"pin":"jd_6b7137a5797f5","success":true,"resultCode":0,"overseaMerge":false,"addressVO":null,"orderId":158531934228,"submitSkuNum":1,"deductMoneyFlag":0,"international":false,"orderType":0,"goJumpOrderCenter":false,"payInfo":null,"cartEmpty":false,"scaleSkuInfoListVO":null,"purchaseSkuInfoListVO":null,"noSupportHomeServiceSkuList":null,"msgMobile":null,"msgUuid":null,"message":null}
+确认订单时间：2021-04-16 20:33:16.263671
+全选时间：2021-04-16 20:33:15.459234
+倒计时：0秒------2021-04-16 20:33:14
+
+下单完成时间：2021-04-16 20:32:16.744104
+下单接口返回：{"overSea":false,"orderXml":null,"cartXml":null,"noStockSkuIds":"","reqInfo":null,"hasJxj":false,"addedServiceList":null,"sign":null,"pin":"jd_6b7137a5797f5","success":true,"resultCode":0,"overseaMerge":false,"addressVO":null,"orderId":158530117169,"submitSkuNum":1,"deductMoneyFlag":0,"international":false,"orderType":0,"goJumpOrderCenter":false,"payInfo":null,"cartEmpty":false,"scaleSkuInfoListVO":null,"purchaseSkuInfoListVO":null,"noSupportHomeServiceSkuList":null,"msgMobile":null,"msgUuid":null,"needCheckCode":false,"message":null}
+确认订单时间：2021-04-16 20:32:16.314772
+全选时间：2021-04-16 20:32:15.758057
+倒计时：0秒------2021-04-16 20:32:14

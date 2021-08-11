@@ -1,0 +1,6 @@
+cefpython3==66.1
+pycparser==2.20
+pythonnet==2.5.2
+pywebview==3.4
+selenium==3.141.0
+urllib3==1.26.4
