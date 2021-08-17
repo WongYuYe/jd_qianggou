@@ -1,6 +1,6 @@
 ## 可用于JD抢购
 
-### dist下为windows可执行文件，可直接运行
+### python版本可使用pyinstaller -F -w xx.py打包为可执行文件，文件在dist下，打包后文件在windows下运行可直接运行
 
 ### 前置步骤：清空购物车，减少其他商品干扰
 ### 总体步骤如下：
