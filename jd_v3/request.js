@@ -11,14 +11,13 @@ const fetch = require('node-fetch');
  * @param {*} cookie
  * @return {*}
  */
-function getRequestHandler({ url, cookie = '' }) {
+function getRequestHandler({ url, headers = {} }) {
   return new Promise(async (resolve, reject) => {
     await fetch(url, {
       method: 'get',
       redirect: 'manual', // 手动跟踪
       headers: {
-        'Cookie': cookie,
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        ...headers
       }
     }).then(res => {
       resolve(res)
@@ -34,7 +33,7 @@ function getRequestHandler({ url, cookie = '' }) {
  * @param {*} cookie
  * @return {*}
  */
-function postRequestHandler({ url, data = {}, headers = {} }) {
+function postRequestHandler({ url, data, headers = {} }) {
   return new Promise(async (resolve, reject) => {
     await fetch(url, {
       method: 'post',
