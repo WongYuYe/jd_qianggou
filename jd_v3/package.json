@@ -4,7 +4,7 @@
   "description": "jd_qianggou",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
+    "qiang": "node index.js",
     "build": "rollup --config"
   },
   "keywords": [
