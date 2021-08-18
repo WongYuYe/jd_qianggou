@@ -20,7 +20,7 @@ v1、v2只保证单流程走通，v3增加自动获取cookie、监控抢单等�
 安装依赖：``npm i``
 启动命令：``npm run qiang``
 
-根据需要修改抢购的商品ID和时间
+根据需要修改配置
 ```js
 // config.js
 module.exports = {
