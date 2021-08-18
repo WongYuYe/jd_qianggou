@@ -83,7 +83,7 @@ function afterGetCookieHandler() {
  */
 function startOrder() {
   return new Promise(async (resolve, reject) => {
-    // await cartCheckSingle();
+    await cartCheckSingle();
     await comfirmOrder()
     const res = await submitOrder();
     const { success } = res;
