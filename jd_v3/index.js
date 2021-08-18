@@ -15,7 +15,7 @@ const { APIS, HEADERS } = require('./api')
 
 let cookie = ''; // JD cookie
 
-const { pid, time, pcount, timeCut } = require('./config')
+const { pid, time, pcount, timeCut, timeSleep } = require('./config')
 
 const timeStamp = +new Date(time);
 
@@ -23,7 +23,7 @@ const puppeteer = require('puppeteer');
 
 const { JDLoginURL, JDCartURL } = require('./urls')
 
-const { parseCookie, writeCookieToLocal, writeLogsToLocal } = require('./utils')
+const { parseCookie, writeCookieToLocal, writeLogsToLocal, sleep } = require('./utils')
 
 require('./DateFormat.js')
 
@@ -63,13 +63,33 @@ function afterGetCookieHandler() {
     // 判断是否存在该商品并加车
     await checkProductIsExit()
 
-    // 统计抢购倒计时
-    const afterTime = timeStamp - +new Date();
-    console.log(`${afterTime / 1000}秒后执行`)
-    setTimeout(async () => {
-      await startOrder()
-    }, afterTime)
+    // 抢购时间
+    console.log(`抢购时间：${time}`);
 
+    // 抢购倒计时
+    await loopAndStart(startOrder, timeSleep)
+
+    resolve()
+  })
+}
+
+/**
+ * @description: 循环倒计时 
+ * @param {*}
+ * @return {*}
+ */
+function loopAndStart(cb, time) {
+  return new Promise(async (resolve, reject) => {
+    console.log(`倒计时：${new Date().format('yyyy-MM-dd hh:mm:ss S')}`);
+    while (true) {
+      if (+new Date() >= timeStamp) {
+        await cb()
+        break
+      } else {
+        await sleep(time)
+        console.log(`倒计时：${new Date().format('yyyy-MM-dd hh:mm:ss S')}`);
+      }
+    }
     resolve()
   })
 }
@@ -118,7 +138,7 @@ function reCheckAndStartOrder() {
       }, timeCut)
     }
   })
-  
+
 }
 
 /**
@@ -126,7 +146,7 @@ function reCheckAndStartOrder() {
  * @param {*}
  * @return {*}
  */
- function checkCartProduct() {
+function checkCartProduct() {
   return new Promise(async (resolve, reject) => {
     console.log('开始检查购物车此商品状态-----------');
     const { resultData: { cartInfo: { vendors } } } = await getCurrentCart()

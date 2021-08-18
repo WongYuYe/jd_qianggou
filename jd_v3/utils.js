@@ -31,4 +31,7 @@ module.exports = {
       console.error(err)
     }
   },
+  sleep: (time) => {
+    return new Promise((resolve) => setTimeout(resolve, time));
+  }
 }
