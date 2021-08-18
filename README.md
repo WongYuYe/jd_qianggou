@@ -56,3 +56,5 @@ https://item.jd.com/xxxxxxxx.html，
 ## TODO
 + [x] 自动获取cookie
 + [x] 监控下单
++ [ ] 定时器实现改造（setTimeout实际执行时间出入很大）
++ [ ] 直接购买（去掉购物车流程）
