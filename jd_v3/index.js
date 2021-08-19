@@ -149,23 +149,28 @@ function reCheckAndStartOrder() {
 function checkCartProduct() {
   return new Promise(async (resolve, reject) => {
     console.log('开始检查购物车此商品状态-----------');
-    const { resultData: { cartInfo: { vendors } } } = await getCurrentCart()
-    const allItemArray = [];
-    vendors.map(({ sorted }) => {
-      sorted.map(({ item, itemType }) => {
-        if (itemType === 1) {
-          allItemArray.push(item)
-        } else {
-          item.items.map(({ item: iitem }) => {
-            allItemArray.push(iitem)
-          })
-        }
+    const { resultData: { cartInfo } } = await getCurrentCart()
+    if(cartInfo) {
+      const allItemArray = [];
+      const { vendors } = cartInfo
+      vendors.map(({ sorted }) => {
+        sorted.map(({ item, itemType }) => {
+          if (itemType === 1) {
+            allItemArray.push(item)
+          } else {
+            item.items.map(({ item: iitem }) => {
+              allItemArray.push(iitem)
+            })
+          }
+        })
       })
-    })
-    const findResult = allItemArray.find(item =>
-      item.Id === pid
-    )
-    resolve(findResult)
+      const findResult = allItemArray.find(item =>
+        item.Id === pid
+      )
+      resolve(findResult)
+    } else {
+      resolve()
+    }
   })
 }
 
@@ -181,7 +186,6 @@ function checkProductIsExit() {
     if (!result) {
       console.log('无此商品，并开始加入购物车-----------')
       await addToCart()
-      console.log('加入购物车成功-----------√√√√√')
     } else {
       console.log('购物车内已有此商品-----------√√√√√')
     }
@@ -240,7 +244,7 @@ function addToCart() {
     }
     try {
       await postRequestHandler(params)
-      console.log('加入购物车-----------√√√√√')
+      console.log('加入购物车成功-----------√√√√√')
       resolve()
     } catch (error) {
       reject(error)
