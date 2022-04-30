@@ -150,7 +150,7 @@ function checkCartProduct() {
   return new Promise(async (resolve, reject) => {
     console.log('开始检查购物车此商品状态-----------');
     const { resultData: { cartInfo } } = await getCurrentCart()
-    if(cartInfo) {
+    if (cartInfo) {
       const allItemArray = [];
       const { vendors } = cartInfo
       vendors.map(({ sorted }) => {
